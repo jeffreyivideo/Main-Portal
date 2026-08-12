@@ -3,100 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>職安管理整合主控台</title>
+    <title>信實職安整合主控台</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入高質感字體 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* 移除點擊時的藍色高光，讓手機操作更像原生 App */
-        * { -webkit-tap-highlight-color: transparent; }
+        /* 移除手機點擊閃爍，替換字體，增加點擊回饋動畫 */
+        * { -webkit-tap-highlight-color: transparent; font-family: 'Noto Sans TC', sans-serif; }
+        body { background-color: #f4f7f9; }
+        .card-hover:active { transform: scale(0.97); }
     </style>
 </head>
-<body class="bg-gray-100 font-sans text-gray-800 min-h-screen pb-10">
+<body class="min-h-screen pb-12">
 
-    <!-- 頂部裝飾背景 -->
-    <div class="bg-[#0f3460] h-48 w-full absolute top-0 left-0 z-0 rounded-b-[40px] shadow-md"></div>
-
-    <main class="max-w-md mx-auto relative z-10 px-4 pt-12">
-        
-        <!-- 頭像與標題區 -->
-        <div class="text-center mb-8">
-            <div class="bg-white text-[#0f3460] w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg border-4 border-white/20">
-                <i class="fa-solid fa-shield-halved text-4xl"></i>
-            </div>
-            <h1 class="text-2xl font-bold text-white tracking-wider drop-shadow-md">職安衛生管理系統</h1>
-            <p class="text-sm text-indigo-100 mt-1 font-medium drop-shadow-sm">System Integration Hub</p>
-        </div>
-
-        <!-- 整合連結區塊 -->
-        <div class="space-y-4">
+    <!-- 🌟 頂部深藍色標頭區塊 (優化高度與漸層) -->
+    <header class="bg-gradient-to-b from-[#0a2545] to-[#0f3460] pt-14 pb-16 px-4 rounded-b-[40px] shadow-lg relative">
+        <div class="max-w-md mx-auto text-center">
             
-            <!-- 1. 防護具與化學品後台 -->
-            <a href="https://jeffreyivideo.github.io/equipment-manager/" class="flex items-center bg-white p-4 rounded-xl shadow-sm border-l-4 border-indigo-500 hover:bg-indigo-50 transition-all active:scale-[0.98]">
-                <div class="bg-indigo-100 w-12 h-12 rounded-full flex items-center justify-center text-indigo-600 mr-4 shrink-0">
-                    <i class="fa-solid fa-mask-face text-xl"></i>
+            <!-- 信實 Logo 區塊 -->
+            <div class="bg-white w-24 h-24 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-xl border-4 border-white/20 overflow-hidden relative">
+                
+                <!-- 1. 純 CSS 繪製的信實 Logo (免圖檔) -->
+                <div class="w-[85%] h-[60%] border-[3px] border-black rounded-[100%] flex items-center justify-center absolute">
+                    <span class="text-black font-bold italic text-base tracking-tighter" style="font-family: Arial, sans-serif;">sincere</span>
                 </div>
-                <div class="flex-1">
-                    <h2 class="text-base font-bold text-gray-800 leading-tight">防護具與物料總後台</h2>
-                    <p class="text-xs text-gray-500 mt-0.5">個人防護具、化學品、交維庫存管理</p>
-                </div>
-                <i class="fa-solid fa-chevron-right text-gray-300"></i>
-            </a>
+                
+                <!-- 2. 若您未來上傳了 logo.png 到 GitHub，把上方那段刪掉，並把這行的 hidden 刪除即可 -->
+                <img src="logo.png" alt="信實 Logo" class="w-full h-full object-contain p-2 hidden relative z-10">
+            </div>
 
-            <!-- 2. 設備檢點後台 -->
-            <a href="https://jeffreyivideo.github.io/equipment-check/admin.html" class="flex items-center bg-white p-4 rounded-xl shadow-sm border-l-4 border-blue-500 hover:bg-blue-50 transition-all active:scale-[0.98]">
-                <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center text-blue-600 mr-4 shrink-0">
-                    <i class="fa-solid fa-clipboard-list text-xl"></i>
-                </div>
-                <div class="flex-1">
-                    <h2 class="text-base font-bold text-gray-800 leading-tight">設備檢點後台</h2>
-                    <p class="text-xs text-gray-500 mt-0.5">機具設備每日檢查與維護紀錄</p>
-                </div>
-                <i class="fa-solid fa-chevron-right text-gray-300"></i>
-            </a>
-
-            <!-- 3. 設備作業維修 -->
-            <a href="https://jeffreyivideo.github.io/safety-permit-system/" class="flex items-center bg-white p-4 rounded-xl shadow-sm border-l-4 border-orange-500 hover:bg-orange-50 transition-all active:scale-[0.98]">
-                <div class="bg-orange-100 w-12 h-12 rounded-full flex items-center justify-center text-orange-600 mr-4 shrink-0">
-                    <i class="fa-solid fa-screwdriver-wrench text-xl"></i>
-                </div>
-                <div class="flex-1">
-                    <h2 class="text-base font-bold text-gray-800 leading-tight">設備作業維修</h2>
-                    <p class="text-xs text-gray-500 mt-0.5">修繕通報與安全許可管制申請</p>
-                </div>
-                <i class="fa-solid fa-chevron-right text-gray-300"></i>
-            </a>
-
-            <!-- 4. 職安巡檢 -->
-            <a href="https://jeffreyivideo.github.io/-Routine-Inspections/" class="flex items-center bg-white p-4 rounded-xl shadow-sm border-l-4 border-teal-500 hover:bg-teal-50 transition-all active:scale-[0.98]">
-                <div class="bg-teal-100 w-12 h-12 rounded-full flex items-center justify-center text-teal-600 mr-4 shrink-0">
-                    <i class="fa-solid fa-person-walking-dashed-line-arrow-right text-xl"></i>
-                </div>
-                <div class="flex-1">
-                    <h2 class="text-base font-bold text-gray-800 leading-tight">職安現場巡檢</h2>
-                    <p class="text-xs text-gray-500 mt-0.5">例行性巡檢與缺失改善追蹤</p>
-                </div>
-                <i class="fa-solid fa-chevron-right text-gray-300"></i>
-            </a>
-
-            <!-- 5. 數位學習 -->
-            <a href="https://jeffreyivideo.github.io/digital-learning/" class="flex items-center bg-white p-4 rounded-xl shadow-sm border-l-4 border-emerald-500 hover:bg-emerald-50 transition-all active:scale-[0.98]">
-                <div class="bg-emerald-100 w-12 h-12 rounded-full flex items-center justify-center text-emerald-600 mr-4 shrink-0">
-                    <i class="fa-solid fa-graduation-cap text-xl"></i>
-                </div>
-                <div class="flex-1">
-                    <h2 class="text-base font-bold text-gray-800 leading-tight">數位學習平台</h2>
-                    <p class="text-xs text-gray-500 mt-0.5">教育訓練教材、線上測驗與成績</p>
-                </div>
-                <i class="fa-solid fa-chevron-right text-gray-300"></i>
-            </a>
-
+            <h1 class="text-[22px] font-bold text-white tracking-widest drop-shadow-md mb-1">職安衛生管理系統</h1>
+            <p class="text-xs text-indigo-200 font-medium tracking-widest uppercase">System Integration Hub</p>
         </div>
+    </header>
+
+    <!-- 主選單區塊 (利用 -mt-6 讓卡片往上浮動重疊，產生層次感) -->
+    <main class="max-w-md mx-auto relative z-10 px-4 -mt-6 space-y-4">
         
-        <!-- 底部版權宣告 -->
-        <div class="text-center mt-10 text-xs text-gray-400">
-            <p>&copy; 2026 Occupational Safety & Health Mgmt.</p>
-        </div>
+        <!-- 1. 防護具與化學品後台 -->
+        <a href="https://jeffreyivideo.github.io/equipment-manager/" class="card-hover flex items-center bg-white p-4 rounded-2xl shadow-sm border border-gray-100 transition-transform">
+            <div class="bg-indigo-50 w-14 h-14 rounded-full flex items-center justify-center text-indigo-600 mr-4 shrink-0 shadow-inner">
+                <i class="fa-solid fa-mask-face text-2xl"></i>
+            </div>
+            <div class="flex-1">
+                <h2 class="text-[17px] font-bold text-gray-800 leading-tight mb-1">防護具與物料總後台</h2>
+                <p class="text-[11px] text-gray-500 font-medium">個人防護具、化學品、交維庫存</p>
+            </div>
+            <i class="fa-solid fa-chevron-right text-gray-300 ml-2"></i>
+        </a>
+
+        <!-- 2. 設備檢點後台 -->
+        <a href="https://jeffreyivideo.github.io/equipment-check/admin.html" class="card-hover flex items-center bg-white p-4 rounded-2xl shadow-sm border border-gray-100 transition-transform">
+            <div class="bg-blue-50 w-14 h-14 rounded-full flex items-center justify-center text-blue-600 mr-4 shrink-0 shadow-inner">
+                <i class="fa-solid fa-clipboard-list text-2xl"></i>
+            </div>
+            <div class="flex-1">
+                <h2 class="text-[17px] font-bold text-gray-800 leading-tight mb-1">設備檢點後台</h2>
+                <p class="text-[11px] text-gray-500 font-medium">機具設備每日檢查與維護紀錄</p>
+            </div>
+            <i class="fa-solid fa-chevron-right text-gray-300 ml-2"></i>
+        </a>
+
+        <!-- 3. 設備作業維修 -->
+        <a href="https://jeffreyivideo.github.io/safety-permit-system/" class="card-hover flex items-center bg-white p-4 rounded-2xl shadow-sm border border-gray-100 transition-transform">
+            <div class="bg-orange-50 w-14 h-14 rounded-full flex items-center justify-center text-orange-600 mr-4 shrink-0 shadow-inner">
+                <i class="fa-solid fa-screwdriver-wrench text-2xl"></i>
+            </div>
+            <div class="flex-1">
+                <h2 class="text-[17px] font-bold text-gray-800 leading-tight mb-1">設備作業維修</h2>
+                <p class="text-[11px] text-gray-500 font-medium">修繕通報與安全許可管制申請</p>
+            </div>
+            <i class="fa-solid fa-chevron-right text-gray-300 ml-2"></i>
+        </a>
+
+        <!-- 4. 職安現場巡檢 -->
+        <a href="https://jeffreyivideo.github.io/-Routine-Inspections/" class="card-hover flex items-center bg-white p-4 rounded-2xl shadow-sm border border-gray-100 transition-transform">
+            <div class="bg-teal-50 w-14 h-14 rounded-full flex items-center justify-center text-teal-600 mr-4 shrink-0 shadow-inner">
+                <i class="fa-solid fa-person-walking-dashed-line-arrow-right text-2xl"></i>
+            </div>
+            <div class="flex-1">
+                <h2 class="text-[17px] font-bold text-gray-800 leading-tight mb-1">職安現場巡檢</h2>
+                <p class="text-[11px] text-gray-500 font-medium">例行性巡檢與缺失改善追蹤</p>
+            </div>
+            <i class="fa-solid fa-chevron-right text-gray-300 ml-2"></i>
+        </a>
+
+        <!-- 5. 數位學習平台 -->
+        <a href="https://jeffreyivideo.github.io/digital-learning/" class="card-hover flex items-center bg-white p-4 rounded-2xl shadow-sm border border-gray-100 transition-transform">
+            <div class="bg-emerald-50 w-14 h-14 rounded-full flex items-center justify-center text-emerald-600 mr-4 shrink-0 shadow-inner">
+                <i class="fa-solid fa-graduation-cap text-2xl"></i>
+            </div>
+            <div class="flex-1">
+                <h2 class="text-[17px] font-bold text-gray-800 leading-tight mb-1">數位學習平台</h2>
+                <p class="text-[11px] text-gray-500 font-medium">教育訓練教材、線上測驗與成績</p>
+            </div>
+            <i class="fa-solid fa-chevron-right text-gray-300 ml-2"></i>
+        </a>
 
     </main>
+    
+    <!-- 底部版權宣告 -->
+    <footer class="text-center mt-12 text-[10px] text-gray-400 font-medium tracking-widest">
+        <p>SINCERE APARTMENT MANAGEMENT</p>
+        <p class="mt-1">&copy; 2026 Occupational Safety & Health Mgmt.</p>
+    </footer>
+
 </body>
 </html>
