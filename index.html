@@ -5,11 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>信實職安整合主控台</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- 引入高質感字體 -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* 移除手機點擊閃爍，替換字體，增加點擊回饋動畫 */
         * { -webkit-tap-highlight-color: transparent; font-family: 'Noto Sans TC', sans-serif; }
         body { background-color: #f4f7f9; }
         .card-hover:active { transform: scale(0.97); }
@@ -17,20 +15,15 @@
 </head>
 <body class="min-h-screen pb-12">
 
-    <!-- 🌟 頂部深藍色標頭區塊 (優化高度與漸層) -->
+    <!-- 🌟 頂部深藍色標頭區塊 -->
     <header class="bg-gradient-to-b from-[#0a2545] to-[#0f3460] pt-14 pb-16 px-4 rounded-b-[40px] shadow-lg relative">
         <div class="max-w-md mx-auto text-center">
             
             <!-- 信實 Logo 區塊 -->
             <div class="bg-white w-24 h-24 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-xl border-4 border-white/20 overflow-hidden relative">
-                
-                <!-- 1. 純 CSS 繪製的信實 Logo (免圖檔) -->
                 <div class="w-[85%] h-[60%] border-[3px] border-black rounded-[100%] flex items-center justify-center absolute">
                     <span class="text-black font-bold italic text-base tracking-tighter" style="font-family: Arial, sans-serif;">sincere</span>
                 </div>
-                
-                <!-- 2. 若您未來上傳了 logo.png 到 GitHub，把上方那段刪掉，並把這行的 hidden 刪除即可 -->
-                <img src="logo.png" alt="信實 Logo" class="w-full h-full object-contain p-2 hidden relative z-10">
             </div>
 
             <h1 class="text-[22px] font-bold text-white tracking-widest drop-shadow-md mb-1">職安衛生管理系統</h1>
@@ -38,7 +31,7 @@
         </div>
     </header>
 
-    <!-- 主選單區塊 (利用 -mt-6 讓卡片往上浮動重疊，產生層次感) -->
+    <!-- 主選單區塊 -->
     <main class="max-w-md mx-auto relative z-10 px-4 -mt-6 space-y-4">
         
         <!-- 1. 防護具與化學品後台 -->
@@ -84,12 +77,24 @@
             </div>
             <div class="flex-1">
                 <h2 class="text-[17px] font-bold text-gray-800 leading-tight mb-1">職安現場巡檢</h2>
-                <p class="text-[11px] text-gray-500 font-medium">例行性巡檢與缺失改善追蹤</p>
+                <p class="text-[11px] text-gray-500 font-medium">例行性走動巡檢與缺失提報</p>
             </div>
             <i class="fa-solid fa-chevron-right text-gray-300 ml-2"></i>
         </a>
 
-        <!-- 5. 數位學習平台 -->
+        <!-- 🌟 5. 巡檢總後台 (新增) -->
+        <a href="https://jeffreyivideo.github.io/routine-manager/" class="card-hover flex items-center bg-white p-4 rounded-2xl shadow-sm border border-gray-100 transition-transform">
+            <div class="bg-cyan-50 w-14 h-14 rounded-full flex items-center justify-center text-cyan-600 mr-4 shrink-0 shadow-inner">
+                <i class="fa-solid fa-clipboard-check text-2xl"></i>
+            </div>
+            <div class="flex-1">
+                <h2 class="text-[17px] font-bold text-gray-800 leading-tight mb-1">巡檢總後台</h2>
+                <p class="text-[11px] text-gray-500 font-medium">巡檢紀錄彙整、異常追蹤與統計</p>
+            </div>
+            <i class="fa-solid fa-chevron-right text-gray-300 ml-2"></i>
+        </a>
+
+        <!-- 6. 數位學習平台 -->
         <a href="https://jeffreyivideo.github.io/digital-learning/" class="card-hover flex items-center bg-white p-4 rounded-2xl shadow-sm border border-gray-100 transition-transform">
             <div class="bg-emerald-50 w-14 h-14 rounded-full flex items-center justify-center text-emerald-600 mr-4 shrink-0 shadow-inner">
                 <i class="fa-solid fa-graduation-cap text-2xl"></i>
@@ -101,7 +106,7 @@
             <i class="fa-solid fa-chevron-right text-gray-300 ml-2"></i>
         </a>
 
-        <!-- 6. 數位學習總後台 -->
+        <!-- 7. 數位學習總後台 -->
         <a href="https://jeffreyivideo.github.io/digital-learning/admin.html" class="card-hover flex items-center bg-white p-4 rounded-2xl shadow-sm border border-gray-100 transition-transform">
             <div class="bg-purple-50 w-14 h-14 rounded-full flex items-center justify-center text-purple-600 mr-4 shrink-0 shadow-inner">
                 <i class="fa-solid fa-chalkboard-user text-2xl"></i>
@@ -113,7 +118,7 @@
             <i class="fa-solid fa-chevron-right text-gray-300 ml-2"></i>
         </a>
 
-        <!-- 🌟 7. 教育訓練報名系統 -->
+        <!-- 8. 教育訓練報名系統 -->
         <a href="https://jeffreyivideo.github.io/airport-training-system/" class="card-hover flex items-center bg-white p-4 rounded-2xl shadow-sm border border-gray-100 transition-transform">
             <div class="bg-rose-50 w-14 h-14 rounded-full flex items-center justify-center text-rose-500 mr-4 shrink-0 shadow-inner">
                 <i class="fa-solid fa-user-plus text-2xl"></i>
@@ -125,7 +130,7 @@
             <i class="fa-solid fa-chevron-right text-gray-300 ml-2"></i>
         </a>
 
-        <!-- 🌟 8. 人員證照與回訓管理系統 -->
+        <!-- 🌟 9. 人員證照與回訓管理系統 -->
         <a href="https://jeffreyivideo.github.io/certificate-system/" class="card-hover flex items-center bg-white p-4 rounded-2xl shadow-sm border border-gray-100 transition-transform">
             <div class="bg-amber-50 w-14 h-14 rounded-full flex items-center justify-center text-amber-500 mr-4 shrink-0 shadow-inner">
                 <i class="fa-solid fa-id-badge text-2xl"></i>
